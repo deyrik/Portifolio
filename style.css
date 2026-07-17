@@ -365,3 +365,85 @@ footer p { font-size: 11px; color: var(--fg2); letter-spacing: 0.05em; }
 
 
 
+/*-------------------------------------Botão de copiar e colar */
+/* WRAPPER DO EMAIL E BOTÃO DE COPIAR */
+.email-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-email {
+  /* Mantém suas configurações originais */
+  text-decoration: none; 
+  color: var(--fg);
+  font-family: var(--serif); 
+  font-size: 1.5rem; 
+  font-weight: 300;
+  padding-bottom: 0.3rem; 
+  border-bottom: 1px solid var(--border);
+  transition: color 0.3s, border-color 0.3s;
+}
+.contact-email:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ESTILO DO BOTÃO DE COPIAR */
+.copy-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--fg2);
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative; /* Necessário para o tooltip flutuante */
+}
+.copy-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: stroke 0.3s;
+}
+.copy-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* BALÃO DE FEEDBACK (TOOLTIP) */
+.copy-tooltip {
+  position: absolute;
+  top: -35px; /* Fica acima do botão */
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.copy-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--accent) transparent transparent transparent; /* Triângulo apontando para baixo */
+}
+
+/* CLASSE ATIVADA PELO JAVASCRIPT */
+.copy-btn.active .copy-tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+.copy-btn.active svg {
+  stroke: var(--accent); /* Ícone fica dourado quando copiado */
+}

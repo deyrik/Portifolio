@@ -67,3 +67,26 @@ if (canvas) {
 }
 
 
+// --- FUNCIONALIDADE DO BOTÃO DE COPIAR E-MAIL ---
+const copyBtn = document.getElementById('copy-email-btn');
+
+if (copyBtn) {
+  copyBtn.addEventListener('click', async () => {
+    try {
+      // Copia o texto para a área de transferência
+      await navigator.clipboard.writeText('gabrielferreira1000gs@gmail.com');
+      
+      // Adiciona a classe que mostra o balão de "Copiado!"
+      copyBtn.classList.add('active');
+      
+      // Remove o balão após 2 segundos
+      setTimeout(() => {
+        copyBtn.classList.remove('active');
+      }, 2000);
+      
+    } catch (err) {
+      console.error('Falha ao copiar o e-mail: ', err);
+    }
+  });
+}
+
