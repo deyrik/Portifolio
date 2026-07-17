@@ -294,3 +294,74 @@ footer p { font-size: 11px; color: var(--fg2); letter-spacing: 0.05em; }
   .projects-grid { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 0.8rem; text-align: center; }
 }
+
+/*MATRIX*/
+/* AJUSTES DO MATRIX (HERO RIGHT) */
+.hero-right {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+#matrix-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.35; /* Suave para não ofuscar o texto da esquerda */
+  /* Cria um degradê para o efeito sumir nas bordas e ficar elegante */
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  pointer-events: none;
+}
+
+
+/* AJUSTES DO TERMINAL (SEÇÃO SOBRE) */
+.about-portrait {
+  min-height: 400px;
+  height: 100%; /* Faz a div se adaptar ao espaço ao invés de forçar a altura gigante */
+  background: #080706; 
+  border: 1px solid var(--border);
+  position: relative; 
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.about-portrait::after { display: none; } /* Remove o brilho de baixo que tinha antes */
+
+.terminal-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.terminal-header {
+  background: var(--bg2);
+  padding: 12px 15px;
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+.terminal-body {
+  padding: 20px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--fg2);
+  line-height: 1.8;
+  flex-grow: 1;
+}
+.prompt { color: var(--accent); margin-right: 8px; font-weight: 400; }
+.output { color: #8a8070; margin-left: 10px; }
+.cursor { animation: blink 1s step-end infinite; color: var(--fg); font-weight: bold; }
+@keyframes blink { 50% { opacity: 0; } }
+
+
+
