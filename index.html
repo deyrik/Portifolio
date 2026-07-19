@@ -59,36 +59,29 @@
 <section id="about">
   <p class="section-label fade-in">Sobre mim</p>
   <div class="about-grid">
-    <div class="about-portrait fade-in fade-in-delay-1">
-      <div class="terminal-box">
-        <div class="terminal-header">
-          <span class="dot dot-red"></span>
-          <span class="dot dot-yellow"></span>
-          <span class="dot dot-green"></span>
-        </div>
-        <div class="terminal-body">
-          <p><span class="prompt">gabriel@linux:~$</span> ./iniciar_portfolio.sh</p>
-          <p class="output">> Booting profile...</p>
-          <p class="output">> [OK] Estrutura de Dados estabelecidos...</p>
-          <p class="output">> [OK] Tabelas Hash preparadas</p>
-          <p class="output">> [OK] Algoritmos de MetaHeuristica computados</p>
-          <p class="output">> [OK] Low-level Systems: C/C++ & threads ready</p>
-          <p class="output">> [OK] IoT Gateway: Arduino Nano 33 BLE -> ESP32 -> MQTT active</p>
-          <p class="output">> [OK] Python Modules: Web scraping and data mining scripts scheduled via cron</p>
-          <p class="output">> [OK] Statistic Mode: Encoder and Decoders </p>
-          <p class="output">> [OK] Redes Neurais Profundas pensando ...{\n}Inteligencia Artificial pronta</p>
-          <p class="output">> [OK] Compilers: Flex/GCC Lexical Analyzer built successfully</p>
-          <p class="output">> [OK] Compilers: Yacc -> constructed syntactic tree built successfully</p>
-          <p class="output">> [OK] Compilers: Grafos de dependencias montados</p>
-          <p class="output">> [OK] Compilers: Codigos de tres enderecos - executar?</p>
-          <p class="output">> [OK] Firmware: MSP430 hardware interrupts loaded</p>
-          <p class="output">> [OK] Redes: Camdas Fisica -> Enlace -> Transporte -> Rede [Estabelecidas]</p>
-          <p class="output">> [OK] Distribuidos: Socktes prontos, conctando computadores</p>
-          <p class="output">> System fully operational.</p>
-          <p class="prompt-line"><span class="prompt">gabriel@linux:~$</span> <span class="cursor">_</span></p>
-        </div>
-      </div>
+    
+    <!-- APENAS O BOTÃO FICA AQUI AGORA -->
+  <div class="about-portrait fade-in fade-in-delay-1 interactive-terminal-card" id="open-terminal-card">
+    <div class="terminal-header">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-yellow"></span>
+      <span class="dot dot-green"></span>
     </div>
+    <div class="terminal-standby-body">
+      <div class="power-icon-wrapper">
+        <!-- Ícone de Energia em SVG -->
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+          <line x1="12" y1="2" x2="12" y2="12"></line>
+        </svg>
+      </div>
+      <h3 class="standby-title">Sistema em Espera</h3>
+      <p class="standby-desc">Inicie o terminal e veja um pouco de minhas habilidades.</p>
+      <div class="standby-btn-mock">>_ ACESSAR TERMINAL</div>
+    </div>
+  </div>
+
+    <!-- TEXTOS DO SOBRE -->
     <div>
       <h2 class="section-title fade-in">Construindo o futuro,<br><em style="font-style:italic; color:var(--accent)">um commit de cada vez.</em></h2>
       <div class="about-text fade-in fade-in-delay-1">
@@ -282,6 +275,53 @@
   <p>© 2026 Gabriel de Pádua. Todos os direitos reservados.</p>
   <p>Feito com cuidado!!! — Minas Gerais, Brasil</p>
 </footer> 
+
+
+
+
+<!-- MODAL DO TERMINAL (Fica escondido por padrão) -->
+<div id="terminal-modal" class="modal-overlay">
+  <div class="modal-content">
+    <button id="close-modal-btn" class="close-btn" aria-label="Fechar Terminal">&times;</button>
+    
+    <div class="terminal-box">
+      <div class="terminal-header">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+      </div>
+      
+      <div class="terminal-body" id="modal-terminal-body">
+        <div id="terminal-output-lines" style="display: none;">
+          <!-- A primeira linha agora é texto normal, que será a primeira a aparecer -->
+          <p><span class="prompt">gabriel@linux:~$</span> ./iniciar_portfolio.sh</p>
+          
+          <p class="output">> Booting profile...</p>
+          <p class="output">> [OK] Estrutura de Dados estabelecidos...</p>
+          <p class="output">> [OK] Tabelas Hash preparadas</p>
+          <p class="output">> [OK] Algoritmos de MetaHeuristica computados</p>
+          <p class="output">> [OK] Low-level Systems: C/C++ & threads ready</p>
+          <p class="output">> [OK] IoT Gateway: Arduino Nano 33 BLE -> ESP32 -> MQTT active</p>
+          <p class="output">> [OK] Python Modules: Web scraping and data mining scripts scheduled via cron</p>
+          <p class="output">> [OK] Statistic Mode: Encoder and Decoders</p>
+          <p class="output">> [OK] Redes Neurais Profundas pensando ...</p>
+          <p class="output">> [OK] Inteligencia Artificial pronta</p>
+          <p class="output">> [OK] Compilers: Flex/GCC Lexical Analyzer built successfully</p>
+          <p class="output">> [OK] Compilers: Yacc -> constructed syntactic tree built successfully</p>
+          <p class="output">> [OK] Compilers: Grafos de dependencias montados</p>
+          <p class="output">> [OK] Compilers: Codigos de tres enderecos - executar?</p>
+          <p class="output">> [OK] Firmware: MSP430 hardware interrupts loaded</p>
+          <p class="output">> [OK] Redes: Camadas Fisica -> Enlace -> Transporte -> Rede [Estabelecidas]</p>
+          <p class="output">> [OK] Distribuidos: Sockets prontos, conectando computadores</p>
+          <p class="output">> System fully operational.</p>
+          <p class="prompt-line"><span class="prompt">gabriel@linux:~$</span> <span class="cursor">_</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 <!-- Link para o arquivo JavaScript externo -->
 <script src="script.js"></script>

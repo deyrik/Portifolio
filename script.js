@@ -90,3 +90,79 @@ if (copyBtn) {
   });
 }
 
+
+// --- LÓGICA DO MODAL + BOOT AUTOMÁTICO DO TERMINAL ---
+const openTerminalCard = document.getElementById('open-terminal-card');
+const closeModalBtn = document.getElementById('close-modal-btn');
+const modalOverlay = document.getElementById('terminal-modal');
+const outputContainer = document.getElementById('terminal-output-lines');
+const terminalBody = document.getElementById('modal-terminal-body');
+
+let hasBooted = false; // Trava para não rodar a animação duas vezes
+
+if (openTerminalCard && modalOverlay && closeModalBtn) {
+  
+  // Quando clica no cartão da seção "Sobre"
+  openTerminalCard.addEventListener('click', () => {
+    modalOverlay.classList.add('active'); // Escurece a tela
+    document.body.style.overflow = 'hidden'; // Trava a rolagem da página
+    
+    // Se for a primeira vez que abre, inicia o boot após 600ms (tempo do modal aparecer)
+    if (!hasBooted) {
+      hasBooted = true;
+      setTimeout(iniciarBoot, 600);
+    }
+  });
+
+  // Funções de fechar o modal
+  const fecharModal = () => {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  };
+  closeModalBtn.addEventListener('click', fecharModal);
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) fecharModal();
+  });
+}
+
+// A função mágica que digita as linhas
+function iniciarBoot() {
+  if (!outputContainer) return;
+  
+  outputContainer.style.display = 'block';
+  const lines = outputContainer.querySelectorAll('p');
+  
+  // Esconde todas as linhas
+  lines.forEach(line => line.classList.add('terminal-line-hidden'));
+  
+  let delayAcumulado = 0;
+  
+  lines.forEach((line) => {
+    setTimeout(() => {
+      line.classList.remove('terminal-line-hidden');
+      if (terminalBody) {
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+      }
+    }, delayAcumulado);
+    
+    const textoDaLinha = line.innerText || line.textContent;
+    
+    // Lê o texto para decidir a pausa até imprimir a PRÓXIMA linha
+    if (textoDaLinha.includes("./iniciar_portfolio.sh")) {
+      delayAcumulado += 800; // Pausa após "digitar" o comando
+    }
+    else if (textoDaLinha.includes("pensando")) {
+      delayAcumulado += 800; // Pausa dramática da IA
+    } 
+    else if (textoDaLinha.includes("Booting profile") || textoDaLinha.includes("operational")) {
+      delayAcumulado += 800;
+    } 
+    else if (textoDaLinha.includes("gabriel@linux:~$")) {
+      delayAcumulado += 100;
+    }
+    else {
+      // Linhas normais caem rápido e de forma aleatória
+      delayAcumulado += Math.floor(Math.random() * 170) + 80; 
+    }
+  });
+}
