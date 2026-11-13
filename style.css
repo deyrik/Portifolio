@@ -126,6 +126,7 @@ nav {
   50% { opacity: 1; transform: scaleY(1.2); }
 }
 
+
 /* SECTION BASE */
 section { padding: 7rem 4rem; }
 .section-label {
@@ -295,29 +296,25 @@ footer p { font-size: 11px; color: var(--fg2); letter-spacing: 0.05em; }
   footer { flex-direction: column; gap: 0.8rem; text-align: center; }
 }
 
-/*MATRIX*/
 /* AJUSTES DO MATRIX (HERO RIGHT) */
 .hero-right {
-  position: relative;
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-#matrix-canvas {
-  position: absolute;
+  position: absolute; /* Solta a div do layout para ela virar fundo */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.35; /* Suave para não ofuscar o texto da esquerda */
-  /* Cria um degradê para o efeito sumir nas bordas e ficar elegante */
-  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
-  pointer-events: none;
+  z-index: 0; /* Joga para trás de tudo */
+  pointer-events: none; /* Garante que o usuário consiga clicar no seu botão "Ver Projetos" */
 }
 
+#matrix-canvas {
+  width: 100%;
+  height: 100%;
+  opacity: 0.35; 
+  /* O degradê elegante original é mantido */
+  mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
 
 /* AJUSTES DO TERMINAL (SEÇÃO SOBRE) */
 .about-portrait {
@@ -681,4 +678,186 @@ footer p { font-size: 11px; color: var(--fg2); letter-spacing: 0.05em; }
 .interactive-terminal-card:active {
   transform: scale(0.98); /* O cartão "afunda" levemente quando tocado */
   border-color: var(--accent);
+}
+
+
+/* ========================================================
+   NOVAS FUNCIONALIDADES & SEÇÕES (CV & TRAJETÓRIA)
+   ======================================================== */
+
+/* BOTÃO DE CV NA NAVBAR */
+.nav-cv-btn {
+  border: 1px solid var(--accent) !important;
+  color: var(--accent) !important;
+  padding: 0.35rem 0.85rem !important;
+  font-size: 11px !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 2px;
+}
+.nav-cv-btn:hover {
+  background: var(--accent) !important;
+  color: var(--bg) !important;
+  box-shadow: 0 0 15px rgba(200, 151, 58, 0.3);
+}
+
+/* GRUPO DE BOTÕES HERO */
+.hero-cta-group {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.hero-cta-sec {
+  background: transparent;
+  border: 1px solid rgba(200, 151, 58, 0.45);
+  color: var(--accent);
+}
+.hero-cta-sec::before {
+  background: rgba(200, 151, 58, 0.15);
+}
+.hero-cta-sec:hover {
+  border-color: var(--accent);
+  color: var(--fg);
+}
+
+/* SEÇÃO DE EXPERIÊNCIA & TRAJETÓRIA */
+#experience {
+  background: var(--bg);
+}
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+.exp-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.35s ease;
+}
+.exp-card:hover {
+  border-color: rgba(200, 151, 58, 0.45);
+  transform: translateX(4px);
+  background: #181612;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+.exp-card:hover::before {
+  transform: scaleY(1);
+}
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+  flex-wrap: wrap;
+}
+.exp-role-group {
+  flex: 1;
+}
+.exp-role {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--fg);
+  line-height: 1.2;
+}
+.exp-company {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 0.35rem;
+  display: inline-block;
+}
+.exp-period {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--fg2);
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  white-space: nowrap;
+}
+.exp-desc {
+  font-size: 13.5px;
+  color: var(--fg2);
+  line-height: 1.85;
+  margin-bottom: 1.4rem;
+}
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* DETALHES DE CONTATO */
+.contact-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--fg2);
+}
+.contact-detail-item {
+  color: var(--fg2);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.contact-detail-item:hover {
+  color: var(--accent);
+}
+
+/* RESPONSIVIDADE ADICIONAL PARA MOBILE */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem 1.2rem;
+  }
+  .nav-links {
+    gap: 1.1rem;
+    overflow-x: auto;
+    max-width: 100%;
+    padding-bottom: 3px;
+  }
+  .nav-links a {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-cta {
+    justify-content: center;
+    text-align: center;
+  }
+  .exp-card {
+    padding: 1.8rem;
+  }
+  .exp-header {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
 }

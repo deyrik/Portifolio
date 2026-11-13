@@ -3,27 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfólio — Gabriel de Pádua</title>
+<title>Gabriel de Pádua — Cientista da Computação & Engenheiro de Dados</title>
+
+<!-- Meta tags de SEO e Redes Sociais -->
+<meta name="description" content="Portfólio de Gabriel de Pádua. Cientista da Computação (UFV) e Analista de Dados na REDPEAK, com foco em Engenharia de Dados, Sistemas de Baixo Nível, IoT, Inteligência Artificial e Compiladores.">
+<meta name="author" content="Gabriel de Pádua">
+<meta name="keywords" content="Gabriel de Pádua, Cientista da Computação, UFV, REDPEAK, Engenharia de Dados, Compiladores, IoT, Python, C, C++, Deep Learning">
+<meta property="og:title" content="Gabriel de Pádua — Portfólio">
+<meta property="og:description" content="Cientista da Computação graduado pela UFV e Analista de Dados na REDPEAK. Confira projetos em compiladores, IoT, redes neurais e dados.">
+<meta property="og:type" content="website">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <!-- Link para o arquivo CSS externo -->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-
-
-
 <nav>
-<a href="#hero" class="nav-logo" aria-label="Home">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-  </svg>
-</a>
+  <a href="#hero" class="nav-logo" aria-label="Home">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      <polyline points="9 22 9 12 15 12 15 22"></polyline>
+    </svg>
+  </a>
   <ul class="nav-links">
     <li><a href="#about">Sobre</a></li>
+    <li><a href="#experience">Experiência</a></li>
     <li><a href="#projects">Projetos</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contato</a></li>
@@ -33,14 +40,11 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <p class="hero-label">Portfólio Pessoal</p>
+    <p class="hero-label">Cientista da Computação & Engenheiro de Dados</p>
     <h1 class="hero-name">Gabriel<br><em>de </em>Pádua</h1>
     <p class="hero-subtitle">
-    Cientista da Computação apaixonado por criar experiências digitais únicas. 
-    Sou movido pelo fascínio por Matemática, Física, Engenharia e Filosofia, 
-    ciências fundamentais que me fornecem a base analítica para resolver problemas complexos. 
-    Meu trabalho é totalmente focado em escrever código limpo, aplicar um design inteligente e 
-    desenvolver soluções que realmente importam.
+      Graduado em <strong>Ciência da Computação pela Universidade Federal de Viçosa (UFV)</strong> e <strong>Analista de Dados na REDPEAK</strong>. 
+      Especialista em construir soluções de ponta a ponta: desde arquiteturas de dados e pipelines de ETL até sistemas embarcados de baixo nível, compiladores, inteligência artificial e sistemas distribuídos.
     </p>
     <a href="#projects" class="hero-cta">
       Ver Projetos &nbsp;→
@@ -60,54 +64,168 @@
   <p class="section-label fade-in">Sobre mim</p>
   <div class="about-grid">
     
-    <!-- APENAS O BOTÃO FICA AQUI AGORA -->
-  <div class="about-portrait fade-in fade-in-delay-1 interactive-terminal-card" id="open-terminal-card">
-    <div class="terminal-header">
-      <span class="dot dot-red"></span>
-      <span class="dot dot-yellow"></span>
-      <span class="dot dot-green"></span>
-    </div>
-    <div class="terminal-standby-body">
-      <div class="power-icon-wrapper">
-        <!-- Ícone de Energia em SVG -->
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
-          <line x1="12" y1="2" x2="12" y2="12"></line>
-        </svg>
+    <!-- TERMINAL INTERATIVO STANDBY -->
+    <div class="about-portrait fade-in fade-in-delay-1 interactive-terminal-card" id="open-terminal-card" role="button" tabindex="0" aria-label="Abrir terminal interativo">
+      <div class="terminal-header">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
       </div>
-      <h3 class="standby-title">Sistema em Espera</h3>
-      <p class="standby-desc">Inicie o terminal e veja um pouco de minhas habilidades.</p>
-      <div class="standby-btn-mock">>_ ACESSAR TERMINAL</div>
+      <div class="terminal-standby-body">
+        <div class="power-icon-wrapper">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+            <line x1="12" y1="2" x2="12" y2="12"></line>
+          </svg>
+        </div>
+        <h3 class="standby-title">Sistema em Espera</h3>
+        <p class="standby-desc">Inicie o terminal e explore meu histórico e habilidades em tempo real.</p>
+        <div class="standby-btn-mock">>_ ACESSAR TERMINAL</div>
+      </div>
     </div>
-  </div>
 
     <!-- TEXTOS DO SOBRE -->
     <div>
-      <h2 class="section-title fade-in">Construindo o futuro,<br><em style="font-style:italic; color:var(--accent)">um commit de cada vez.</em></h2>
+      <h2 class="section-title fade-in">Fundamentos sólidos,<br><em style="font-style:italic; color:var(--accent)">engenharia de ponta a ponta.</em></h2>
       <div class="about-text fade-in fade-in-delay-1">
-        <p>Olá! Sou um Ciêntista da Computação, Engenheiro de Software e Pesquisador Cietifico, formado pela Universidade Federal de Viçosa, com <strong>5 anos de experiência</strong> criando soluções. Tenho paixão por transformar ideias complexas em aplicações ou interfaces simples e elegantes.</p>
-        <p>Atualmente focado em <strong>desenvolvimento full-stack</strong>, trabalho com tecnologias modernas e siguindo boas práticas de engenharia e arquitetura de software para entregar produtos de qualidade e escalaveis.</p>
-        <p>Quando não estou codando, você pode me encontrar contribuindo para projetos open-source, lendo sobre arquitetura de software ou explorando novas tecnologias e hardwares.</p>
+        <p>Olá! Sou Cientista da Computação formado pela <strong>Universidade Federal de Viçosa (UFV)</strong>. Minha trajetória combina o rigor científico e analítico da academia com a entrega de soluções robustas para o mercado.</p>
+        <p>Com forte base em <strong>Matemática, Física, Algoritmos e Estruturas de Dados</strong>, transito com naturalidade entre diferentes camadas da computação: desde a concepção de <strong>compiladores</strong> e <strong>sistemas embarcados (IoT)</strong> em C/C++, passando por <strong>redes neurais profundas</strong> e <strong>sistemas distribuídos</strong>, até a estruturação de <strong>Data Lakes, pipelines de ETL</strong> para suporte a decisões estratégicas ou criação de modelos preditivos.</p>
+        <p>Já liderei equipes multidisciplinares com mais de 19 profissionais, atuei na gestão de empresa júnior (SETAPP) e participei de pesquisas científicas de ponta em ética computacional (ETHOS), bioengenharia com IoT (LESC) e astrofísica computacional.</p>
       </div>
       <div class="about-stats fade-in fade-in-delay-2">
         <div class="stat">
-          <div class="stat-number">40+</div>
-          <div class="stat-label">Projetos Desenvolvidos</div>
+          <div class="stat-number">UFV</div>
+          <div class="stat-label">Ciência da Computação</div>
         </div>
         <div class="stat">
-          <div class="stat-number">5+</div>
-          <div class="stat-label">Anos de experiência</div>
+          <div class="stat-number">REDPEAK</div>
+          <div class="stat-label">Engenharia & Análise de Dados</div>
         </div>
         <div class="stat">
           <div class="stat-number">3+</div>
-          <div class="stat-label">Areas de Pesquisas Envolvido</div>
+          <div class="stat-label">Linhas de Pesquisa Científica</div>
         </div>
         <div class="stat">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Comprometimento</div>
+          <div class="stat-number">19</div>
+          <div class="stat-label">Pessoas Lideradas</div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA E TRAJETÓRIA -->
+<section id="experience">
+  <p class="section-label fade-in">Trajetória Profissional & Acadêmica</p>
+  <div class="experience-list">
+
+    <!-- REDPEAK -->
+    <div class="exp-card fade-in">
+      <div class="exp-header">
+        <div class="exp-role-group">
+          <h3 class="exp-role">Analista de Dados / Engenheiro de Dados</h3>
+          <span class="exp-company">REDPEAK</span>
+        </div>
+        <span class="exp-period">Agosto / 2026 – Presente</span>
+      </div>
+      <p class="exp-desc">
+        Responsável pelo ciclo de vida integral dos dados de clientes. Atuação no desenvolvimento e sustentação de pipelines de ETL com rigoroso controle de segurança e governança em ambientes de desenvolvimento. Condução da estruturação (CI/CD) de Data Lakes e Data Warehouses, além da análise de dados e criação de dashboards de Business Intelligence (BI) para transformar dados brutos em inteligência para tomada de decisões estratégicas.
+      </p>
+      <div class="exp-tags">
+        <span class="tag">Pipelines ETL</span>
+        <span class="tag">Data Warehouse</span>
+        <span class="tag">CI/CD</span>
+        <span class="tag">BI & Dashboards</span>
+        <span class="tag">Governança de Dados</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Git</span>
+      </div>
+    </div>
+
+    <!-- PROJETO ETHOS -->
+    <div class="exp-card fade-in fade-in-delay-1">
+      <div class="exp-header">
+        <div class="exp-role-group">
+          <h3 class="exp-role">Engenheiro de Software & Pesquisador Científico</h3>
+          <span class="exp-company">Universidade Federal de Viçosa — Projeto ETHOS (NuPESSC)</span>
+        </div>
+        <span class="exp-period">Abril / 2023 – Julho / 2026</span>
+      </div>
+      <p class="exp-desc">
+        Pesquisa científica orientada pela Dra. Gláucia Braga com o objetivo de identificar e investigar problemas éticos no contexto de jogos eletrônicos. Implementação de rotinas de raspagem de dados (web scraping) e mineração em larga escala de interações de usuários para análise através de modelos de redes neurais profundas sobre os datasets consolidados.
+      </p>
+      <div class="exp-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Redes Neurais</span>
+        <span class="tag">Data Mining</span>
+        <span class="tag">Web Scraping</span>
+        <span class="tag">Pesquisa Científica</span>
+      </div>
+    </div>
+
+    <!-- PROJETO INTEGRADOR -->
+    <div class="exp-card fade-in fade-in-delay-2">
+      <div class="exp-header">
+        <div class="exp-role-group">
+          <h3 class="exp-role">Líder do Projeto & Designer de Software</h3>
+          <span class="exp-company">UFV & Prefeitura de Florestal (MG)</span>
+        </div>
+        <span class="exp-period">1 ano de duração</span>
+      </div>
+      <p class="exp-desc">
+        Liderança e coordenação técnica de equipe multidisciplinar com 19 profissionais (arquitetos, designers de software e game, Scrum Master e desenvolvedores sêniores e juniores). Concepção e entrega de um jogo educacional voltado para a melhoria do ensino fundamental (5º ano) em cooperação com a Prefeitura Municipal e sua rede de ensino.
+      </p>
+      <div class="exp-tags">
+        <span class="tag">Liderança Técnica</span>
+        <span class="tag">Java</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Astah / UML</span>
+        <span class="tag">Scrum</span>
+        <span class="tag">Design de Software</span>
+      </div>
+    </div>
+
+    <!-- LESC & ASTROFÍSICA -->
+    <div class="exp-card fade-in fade-in-delay-3">
+      <div class="exp-header">
+        <div class="exp-role-group">
+          <h3 class="exp-role">Pesquisador em Sistemas Embarcados (IoT) & Astrofísica</h3>
+          <span class="exp-company">UFV — LESC & Astrofísica Computacional</span>
+        </div>
+        <span class="exp-period">2 anos de pesquisa</span>
+      </div>
+      <p class="exp-desc">
+        No <strong>LESC</strong> (com Dr. José Nacif), conduziu pesquisa interdisciplinar em IoT e visão computacional para monitoramento em tempo real de características fisiológicas de plantas. Na <strong>Astrofísica Computacional</strong> (com Dra. Natália Landim), analisou dados de satélites e observatórios científicos internacionais (NASA, LSST, LIneA), aplicando física óptica e ondas para tratamento de big data astronômico.
+      </p>
+      <div class="exp-tags">
+        <span class="tag">IoT & Sensores</span>
+        <span class="tag">Visão Computacional</span>
+        <span class="tag">C/C++</span>
+        <span class="tag">Big Data Científico</span>
+        <span class="tag">NASA / LSST</span>
+      </div>
+    </div>
+
+    <!-- SETAPP & MONITORIAS -->
+    <div class="exp-card fade-in">
+      <div class="exp-header">
+        <div class="exp-role-group">
+          <h3 class="exp-role">Vice-Presidente de Gente & Gestão e Monitor Acadêmico</h3>
+          <span class="exp-company">SETAPP (Empresa Júnior) & Departamento de Informática (UFV)</span>
+        </div>
+        <span class="exp-period">2024 – 2026</span>
+      </div>
+      <p class="exp-desc">
+        Na <strong>SETAPP</strong>, liderou equipes no desenvolvimento de plataformas web e aplicativos sob medida para entidades como a UFMG e eventos da UFV. Como <strong>Monitor Universitário</strong>, atuou no ensino e acompanhamento pedagógico de turmas de graduação nas disciplinas de <em>Algoritmos e Estruturas de Dados (AEDS)</em> e <em>Programação Avançada</em>.
+      </p>
+      <div class="exp-tags">
+        <span class="tag">Gestão & Liderança</span>
+        <span class="tag">Desenvolvimento Web</span>
+        <span class="tag">AEDS (Estruturas de Dados)</span>
+        <span class="tag">Didática</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -115,56 +233,97 @@
 <section id="projects">
   <p class="section-label fade-in">Projetos selecionados</p>
   <div class="projects-grid">
-    <a href="#" class="project-card fade-in">
+    
+    <!-- PROJETO 1: COMPILADOR UAI -->
+    <a href="https://github.com/deyrik" target="_blank" rel="noopener noreferrer" class="project-card fade-in">
       <div class="project-arrow">↗</div>
       <p class="project-num">001</p>
-      <h3 class="project-title">Redes Neurais (IAs)</h3>
-      <p class="project-desc">Modelegem, Treinamento e Aplicação de IAs especializadas em problemas (como: criar imagens, conversar com usarios entendo seu tipo de linguagem, classificar feedbacks, entre outras).</p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">CUDA</span>
-        <span class="tag">One Drive</span>
-      </div>
-    </a>
-    <a href="#" class="project-card fade-in fade-in-delay-1">
-      <div class="project-arrow">↗</div>
-      <p class="project-num">002</p>
-      <h3 class="project-title">Games</h3>
-      <p class="project-desc">Desenvolvido Games de Turnos, 2d e jogos online. Destaque para projeto liderado por mim a fim de desenvolver um game para prefeitura de Florestal(MG) e sua escola municipal. </p>
-      <div class="project-tags">
-        <span class="tag">C/C++</span>
-        <span class="tag">Java</span>
-        <span class="tag">Python</span>
-        <span class="tag">React Native</span>
-        <span class="tag">MySQL</span>
-        <span class="tag">PostgreSQL</span>
-        <span class="tag">Docker</span>
-      </div>
-    </a>
-    <a href="#" class="project-card fade-in fade-in-delay-2">
-      <div class="project-arrow">↗</div>
-      <p class="project-num">003</p>
-      <h3 class="project-title">Sistema de Gestão</h3>
-      <p class="project-desc">ERP customizado para pequenas empresas com módulos de RH, estoque, financeiro e CRM integrados.</p>
-      <div class="project-tags">
-        <span class="tag">Vue.js</span>
-        <span class="tag">Django</span>
-        <span class="tag">Docker</span>
-      </div>
-    </a>
-    <a href="#" class="project-card fade-in fade-in-delay-3">
-      <div class="project-arrow">↗</div>
-      <p class="project-num">004</p>
-      <h3 class="project-title">IoT</h3>
-      <p class="project-desc">Dispositivos IoT para monitoramento de crianças - Baba Eletronica desenvolvida desde o Hardware.</p>
+      <h3 class="project-title">Compilador UAI_Language</h3>
+      <p class="project-desc">Desenvolvimento de uma linguagem de programação própria com compilador completo em C: análise léxica (Flex), sintática (Bison/Yacc), árvores abstratas (AST), semântica, grafos de dependência e geração de código de 3 endereços com otimização e correspondência para a arquitetura MOS 6502.</p>
       <div class="project-tags">
         <span class="tag">C</span>
-        <span class="tag">Micro Controladores</span>
-        <span class="tag">ESP32</span>
-        <span class="tag">IA</span>
-
+        <span class="tag">Flex / Bison</span>
+        <span class="tag">Compiladores</span>
+        <span class="tag">MOS 6502</span>
+        <span class="tag">Python</span>
       </div>
     </a>
+
+    <!-- PROJETO 2: SMART BABY MONITOR IOT -->
+    <a href="https://github.com/deyrik" target="_blank" rel="noopener noreferrer" class="project-card fade-in fade-in-delay-1">
+      <div class="project-arrow">↗</div>
+      <p class="project-num">002</p>
+      <h3 class="project-title">Smart Baby Monitor (Hardware IoT)</h3>
+      <p class="project-desc">Babá eletrônica inteligente concebida desde o hardware e placas até a camada web: comunicação sem fio Bluetooth Low Energy (BLE) entre Arduino Nano 33 BLE Sense e ESP32, com envio de telemetria em tempo real via Wi-Fi (TCP/IP) para interface web interativa.</p>
+      <div class="project-tags">
+        <span class="tag">C / C++</span>
+        <span class="tag">ESP32</span>
+        <span class="tag">Arduino Nano BLE</span>
+        <span class="tag">BLE & TCP/IP</span>
+        <span class="tag">IoT</span>
+      </div>
+    </a>
+
+    <!-- PROJETO 3: DATA SCIENCE SP -->
+    <a href="https://github.com/deyrik" target="_blank" rel="noopener noreferrer" class="project-card fade-in fade-in-delay-2">
+      <div class="project-arrow">↗</div>
+      <p class="project-num">003</p>
+      <h3 class="project-title">Big Data & Data Science (SP)</h3>
+      <p class="project-desc">Pipeline de Big Data Analytics com higienização, exploração estatística e modelagem de Machine Learning preditivo sobre dataset de mais de 6 milhões de tuplas e 50 colunas com dados reais de segurança pública do estado de São Paulo.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Big Data</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Pandas / NumPy</span>
+        <span class="tag">Jupyter</span>
+      </div>
+    </a>
+
+    <!-- PROJETO 4: GARDEN IN OVERWORLD -->
+    <a href="https://github.com/deyrik" target="_blank" rel="noopener noreferrer" class="project-card fade-in fade-in-delay-3">
+      <div class="project-arrow">↗</div>
+      <p class="project-num">004</p>
+      <h3 class="project-title">Garden in Overworld (Distribuído)</h3>
+      <p class="project-desc">Game multiplayer cooperativo construído em arquitetura de Sistemas Distribuídos cliente-servidor usando apenas comunicação via Sockets puros, interface gráfica com PyQt6, RPC com Pyro5 e ambiente empacotado em containers Docker.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Sockets / TCP</span>
+        <span class="tag">PyQt6</span>
+        <span class="tag">Pyro5</span>
+        <span class="tag">Docker</span>
+      </div>
+    </a>
+
+    <!-- PROJETO 5: REDES NEURAIS DO ZERO -->
+    <a href="https://github.com/deyrik" target="_blank" rel="noopener noreferrer" class="project-card fade-in">
+      <div class="project-arrow">↗</div>
+      <p class="project-num">005</p>
+      <h3 class="project-title">Redes Neurais & Deep Learning</h3>
+      <p class="project-desc">Modelagem e treinamento de redes neurais do zero baseando-se estritamente em fundamentos matemáticos: desde o neurônio simples até redes profundas, CNNs (visão computacional) e RNNs, aplicando algoritmos de meta-heurísticas para otimização de funções de perda.</p>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Deep Learning</span>
+        <span class="tag">CNNs & RNNs</span>
+        <span class="tag">Meta-Heurísticas</span>
+        <span class="tag">Cálculo & Álgebra</span>
+      </div>
+    </a>
+
+    <!-- PROJETO 6: SIMULADORES DE SO E RISC-V -->
+    <a href="https://github.com/deyrik" target="_blank" rel="noopener noreferrer" class="project-card fade-in fade-in-delay-1">
+      <div class="project-arrow">↗</div>
+      <p class="project-num">006</p>
+      <h3 class="project-title">Simuladores de SO & Processador RISC-V</h3>
+      <p class="project-desc">Simuladores desenvolvidos em C para Sistemas Operacionais e Arquitetura: escalonamento preemptivo de processos com threads, semáforos, pipes e detecção de impasses; gerência de memória virtual por paginação; e decodificador de 3 endereços para binário no processador RISC-V 32 bits.</p>
+      <div class="project-tags">
+        <span class="tag">C</span>
+        <span class="tag">Sistemas Operacionais</span>
+        <span class="tag">RISC-V 32 bits</span>
+        <span class="tag">Threads & Semáforos</span>
+        <span class="tag">Baixo Nível</span>
+      </div>
+    </a>
+
   </div>
 </section>
 
@@ -173,54 +332,96 @@
   <p class="section-label fade-in">Habilidades técnicas</p>
   <div class="skills-layout">
     <div>
-      <h2 class="section-title fade-in">Stack &<br><em style="font-style:italic;color:var(--accent)">Ferramentas.</em></h2>
+      <h2 class="section-title fade-in">Stack &<br><em style="font-style:italic;color:var(--accent)">Competências.</em></h2>
       <p class="fade-in" style="color:var(--fg2); font-size:13px; line-height:1.9; margin-top:1rem;">
-        Experiência ampla em resolução de problemas computacionais. Adaptável a novas tecnologias e comprometido com as melhores práticas do mercado.
+        Formação analítica rigorosa aliada à prática em engenharia de sistemas. Domínio de estruturas de dados e complexidade algorítmica assintótica, sistemas distribuídos, inteligência artificial e ciclo de vida de dados corporativos.
       </p>
+
     </div>
+    
     <div class="fade-in fade-in-delay-1">
+      
+      <!-- GRUPO 1: SISTEMAS & BAIXO NÍVEL -->
       <div class="skill-group">
-        <p class="skill-group-title">Frontend</p>
+        <p class="skill-group-title">Sistemas, Baixo Nível & IoT</p>
         <ul class="skill-list">
           <li class="skill-item">
-            <span>Python</span>
+            <span>C / C++ (AEDS, SO, Compiladores)</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div>
+          </li>
+          <li class="skill-item">
+            <span>Compiladores (Flex, Bison, Sintaxe & Semântica)</span>
             <div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div>
           </li>
           <li class="skill-item">
-            <span>TypeScript</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span>CSS / Tailwind</span>
+            <span>Sistemas Embarcados (ESP32, Arduino BLE, MSP430)</span>
             <div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div>
           </li>
           <li class="skill-item">
-            <span>Vue.js</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:70%"></div></div>
+            <span>Assembly (MOS 6502 / RISC-V 32 bits)</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div>
+          </li>
+          <li class="skill-item">
+            <span>Redes & Protocolos (TCP/IP, UDP, Sockets, BLE, MQTT)</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div>
           </li>
         </ul>
       </div>
+
+      <!-- GRUPO 2: DADOS & INTELIGÊNCIA ARTIFICIAL -->
       <div class="skill-group">
-        <p class="skill-group-title">Backend</p>
+        <p class="skill-group-title">Dados, Inteligência Artificial & BI</p>
         <ul class="skill-list">
           <li class="skill-item">
-            <span>C / C++</span>
+            <span>Python (Data Science, ETL, Web Scraping)</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div>
+          </li>
+          <li class="skill-item">
+            <span>Pipelines de ETL & Data Warehouse / Data Lakes</span>
             <div class="skill-bar-wrap"><div class="skill-bar" style="width:90%"></div></div>
           </li>
           <li class="skill-item">
-            <span>Python / Java</span>
+            <span>Redes Neurais & Deep Learning (CNNs, RNNs, Heurísticas)</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div>
+          </li>
+          <li class="skill-item">
+            <span>Bancos de Dados Relacionais (MySQL, PostgreSQL)</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div>
+          </li>
+          <li class="skill-item">
+            <span>Business Intelligence & Dashboards Estratégicos</span>
             <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span>PostgreSQL / MySQL</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:80%"></div></div>
-          </li>
-          <li class="skill-item">
-            <span>Docker / AWS / One Drive</span>
-            <div class="skill-bar-wrap"><div class="skill-bar" style="width:72%"></div></div>
           </li>
         </ul>
       </div>
+
+      <!-- GRUPO 3: ENGENHARIA DE SOFTWARE & ARQUITETURA -->
+      <div class="skill-group">
+        <p class="skill-group-title">Engenharia de Software & Arquitetura</p>
+        <ul class="skill-list">
+          <li class="skill-item">
+            <span>Estruturas de Dados Avançadas & Complexidade O(n)</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:95%"></div></div>
+          </li>
+          <li class="skill-item">
+            <span>Java & Programação Orientada a Objetos / Design Patterns</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div>
+          </li>
+          <li class="skill-item">
+            <span>Docker, Git, CI/CD & Metodologias Ágeis (Scrum)</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:85%"></div></div>
+          </li>
+          <li class="skill-item">
+            <span>Erlang & Paradigma Funcional</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:78%"></div></div>
+          </li>
+          <li class="skill-item">
+            <span>Front-end & Web (JavaScript/TypeScript, Vue.js, HTML5/CSS3)</span>
+            <div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div>
+          </li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </section>
@@ -232,19 +433,15 @@
     <h2 class="contact-title fade-in">Tem um<br>projeto em<br><em>mente?</em></h2>
     
     <p class="contact-text fade-in fade-in-delay-1">
-      Disponibilidade para projetos freelance e oportunidades em tempo integral. 
-      Vamos conversar sobre como posso ajudar. Seu problema tem uma solução!
+      Disponibilidade para novos desafios em Engenharia de Dados, Sistemas de Baixo Nível, Pesquisa e Desenvolvimento de Software.
+      Vamos conversar sobre como posso ajudar.
     </p>
     
     <!-- E-mail e Botão de Copiar -->
     <div class="email-wrapper fade-in fade-in-delay-2">
-      
-      <!-- O texto clicável abre o software de e-mail da pessoa -->
       <a href="mailto:gabrielferreira1000gs@gmail.com" class="contact-email" title="Enviar um e-mail">
         gabrielferreira1000gs@gmail.com
       </a>
-      
-      <!-- O botão de copiar armazena o texto na área de transferência -->
       <button class="copy-btn" id="copy-email-btn" aria-label="Copiar e-mail" title="Copiar e-mail">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -252,35 +449,22 @@
         </svg>
         <span class="copy-tooltip">Copiado!</span>
       </button>
-      
     </div>
     
     <ul class="social-links fade-in fade-in-delay-3">
-      <!-- Links das redes sociais com target="_blank" -->
       <li><a href="https://github.com/deyrik" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       <li><a href="https://www.linkedin.com/in/gabriel-de-pádua-cdc" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
     </ul>
   </div>
 </section>
 
-
-
-
-
-
-
-
-
 <footer>
-  <p>© 2026 Gabriel de Pádua. Todos os direitos reservados.</p>
-  <p>Feito com cuidado!!! — Minas Gerais, Brasil</p>
+  <p>© 2026 Gabriel de Pádua. Bacharel em Ciência da Computação — UFV.</p>
+  <p>Minas Gerais, Brasil</p>
 </footer> 
 
-
-
-
-<!-- MODAL DO TERMINAL (Fica escondido por padrão) -->
-<div id="terminal-modal" class="modal-overlay">
+<!-- MODAL DO TERMINAL -->
+<div id="terminal-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-terminal-title">
   <div class="modal-content">
     <button id="close-modal-btn" class="close-btn" aria-label="Fechar Terminal">&times;</button>
     
@@ -289,39 +473,35 @@
         <span class="dot dot-red"></span>
         <span class="dot dot-yellow"></span>
         <span class="dot dot-green"></span>
+        <span id="modal-terminal-title" style="font-size: 11px; color: var(--fg2); margin-left: 10px; font-family: var(--mono);">gabriel@ufv-station: ~</span>
       </div>
       
       <div class="terminal-body" id="modal-terminal-body">
         <div id="terminal-output-lines" style="display: none;">
-          <!-- A primeira linha agora é texto normal, que será a primeira a aparecer -->
-          <p><span class="prompt">gabriel@linux:~$</span> ./iniciar_portfolio.sh</p>
-          
+          <p><span class="prompt">gabriel@ufv-station:~$</span> ./iniciar_portfolio.sh</p>
           <p class="output">> Booting profile...</p>
-          <p class="output">> [OK] Estrutura de Dados estabelecidos...</p>
-          <p class="output">> [OK] Tabelas Hash preparadas</p>
-          <p class="output">> [OK] Algoritmos de MetaHeuristica computados</p>
-          <p class="output">> [OK] Low-level Systems: C/C++ & threads ready</p>
-          <p class="output">> [OK] IoT Gateway: Arduino Nano 33 BLE -> ESP32 -> MQTT active</p>
-          <p class="output">> [OK] Python Modules: Web scraping and data mining scripts scheduled via cron</p>
-          <p class="output">> [OK] Statistic Mode: Encoder and Decoders</p>
-          <p class="output">> [OK] Redes Neurais Profundas pensando ...</p>
-          <p class="output">> [OK] Inteligencia Artificial pronta</p>
-          <p class="output">> [OK] Compilers: Flex/GCC Lexical Analyzer built successfully</p>
-          <p class="output">> [OK] Compilers: Yacc -> constructed syntactic tree built successfully</p>
-          <p class="output">> [OK] Compilers: Grafos de dependencias montados</p>
-          <p class="output">> [OK] Compilers: Codigos de tres enderecos - executar?</p>
-          <p class="output">> [OK] Firmware: MSP430 hardware interrupts loaded</p>
-          <p class="output">> [OK] Redes: Camadas Fisica -> Enlace -> Transporte -> Rede [Estabelecidas]</p>
-          <p class="output">> [OK] Distribuidos: Sockets prontos, conectando computadores</p>
+          <p class="output">> [OK] UFV Campus Florestal: Bacharelado em Ciência da Computação consolidado</p>
+          <p class="output">> [OK] REDPEAK: Ciclo de vida de dados & pipelines de ETL ativos</p>
+          <p class="output">> [OK] Data Warehouses & Data Lakes integrados com governança</p>
+          <p class="output">> [OK] Estrutura de Dados estabelecidas & O(n) assintótico computado</p>
+          <p class="output">> [OK] Compilador UAI: Flex/Bison léxico e sintático prontos</p>
+          <p class="output">> [OK] Compilador UAI: AST & Grafos de dependência montados</p>
+          <p class="output">> [OK] Compilador UAI: Código de 3 endereços otimizado para MOS 6502</p>
+          <p class="output">> [OK] NuPESSC (ETHOS): Mineração de dados e raspagem em escala ativas</p>
+          <p class="output">> [OK] Deep Learning: Redes Neurais pensando (CNNs & RNNs prontas)...</p>
+          <p class="output">> [OK] LESC / IoT Gateway: Arduino Nano 33 BLE -> ESP32 -> Telemetria ativa</p>
+          <p class="output">> [OK] Astrofísica Computacional: Coleta de dados ópticos de satélites (NASA/LSST)</p>
+          <p class="output">> [OK] Sistemas Operacionais: Simulador de escalonador, memória, threads & semáforos pronto</p>
+          <p class="output">> [OK] Arquitetura RISC-V: Simulador de instruções de 3 endereços decodificado</p>
+          <p class="output">> [OK] Sistemas Distribuídos: Sockets cliente-servidor e Pyro5 estabelecidos</p>
+          <p class="output">> [OK] Liderança Técnica: Projeto Integrador (19 colaboradores) concluído com sucesso</p>
           <p class="output">> System fully operational.</p>
-          <p class="prompt-line"><span class="prompt">gabriel@linux:~$</span> <span class="cursor">_</span></p>
+          <p class="prompt-line"><span class="prompt">gabriel@ufv-station:~$</span> <span class="cursor">_</span></p>
         </div>
       </div>
-
     </div>
   </div>
 </div>
-
 
 <!-- Link para o arquivo JavaScript externo -->
 <script src="script.js"></script>
